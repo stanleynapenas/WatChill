@@ -11,14 +11,18 @@ body{ /* FLEX COLUMN */
     display: inline;
 }
 
+.myP .desc{
+    display: block;
+}
+
 i{
     color: #F4C36C;
 }
 
 /* DEBUG */
-div, header {
+/* div, header {
     border: 1px solid white;
-}
+} */
 
 /* NAV BAR */
 header{
@@ -34,7 +38,7 @@ header{
     width: 200px;
 }
 
-.icons{ /* Classe Base / Macro delle icone */
+.icons{ /* Search Icon */
     height: 25px;
 }
 
@@ -85,6 +89,11 @@ header{
     padding: 20px;
 }
 
+.mainContent{
+    display: flex;
+    flex-direction: column;
+}
+
 .h1{
     line-height: 1.4em;
     font-size: 46px;
@@ -95,6 +104,16 @@ header{
 
 .stars{
     margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.myBtn{
+    margin-top: 40px;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #E95863;
 }
 
 /* Div Right */
@@ -116,6 +135,7 @@ header{
     width: 185px;
     border-radius: 8px;
     overflow: hidden;
+
 }
 
 .immagine{
@@ -124,6 +144,7 @@ header{
 }
 
 .darkBox{
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -133,8 +154,10 @@ header{
     right: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
     transition: ease-in-out 310ms;
-    /* opacity: 0%; */
+    opacity: 0%;
+    cursor: pointer;
 }
 
 .darkBox:hover{
@@ -142,3 +165,48 @@ header{
     opacity: 100%;
 }
 
+.h2{
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.darkBox .stars{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.darkBox .stars i, .darkBox .stars .myP{
+    font-size: 10px;
+}
+
+
+/* CHOOSE */
+.choose{
+    position: absolute;
+    bottom: 0;
+    left: 60px;
+    display: flex;
+}
+
+.scelta{
+    color: #BAB9B9;
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: rgba(215, 215, 215, 0.2);
+    border-radius: 10px 10px 0px 0px;
+    cursor: pointer;
+}
+
+.nonscelto{
+    opacity: 40%;
+}
+
+.h3{
+    font-size: 18px;
+}
+
+.container{
+    width: 300px;
+    height: 400px;
+}

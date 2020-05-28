@@ -27,34 +27,45 @@
         <!-- MAIN CONTENT -->
         <section class="content">
 
-
+            <!-- MACRO CONTENITORE DEL PRIMO RISULTATO -->
             <div class="div1">
-                <h1 class="h1">SpiderMan <br> Into the multiverse</h1>
-                <p class="myP">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi eum blanditiis modi placeat libero nulla dolore totam natus voluptatibus culpa.</p>
-                <div class="stars">
-                    <p class="myP">VOTE :&nbsp;&nbsp;</p>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+                <div class="mainContent">
+                    <!-- TITOLO -->
+                    <h1 class="h1">SpiderMan <br> Into the multiverse</h1>
+                    <!-- VOTO STELLE -->
+                    <div class="stars">
+                        <p class="myP vote">VOTE :&nbsp;&nbsp;</p>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <!-- DESCRIZIONE -->
+                    <p class="myP desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi eum blanditiis modi placeat libero nulla dolore totam natus voluptatibus culpa.</p>
+                    <button class="btn myBtn">Guarda film</button>
+
                 </div>
             </div>
 
-
+            <!-- MACRO CONTENITORE DEI ALTRI RISULTATI -->
             <div class="div2">
-                <div class="box">
-                    <img src="assets/img/spiderman.jpg" class="immagine" alt="{{Title}}">
-                    <div class="darkBox">
-                        <h2>Spiderman</h2>
-                    </div>
+
+            </div>
+
+            <div class="choose">
+                <div class="scelta">
+                    <h3 class="h3">FILM</h3>
+                </div>
+                <div class="scelta nonscelto">
+                    <h3 class="h3">TV</h3>
                 </div>
             </div>
 
         </section>
     </div>
 
-    <style>
+    <style id="bgTemplate">
         .bg{
             background: linear-gradient(
             rgba(50, 50, 50, 0.80), 
@@ -65,6 +76,55 @@
             background-size: cover;
         }
     </style>
+
+    <!-- TEMPLATE MULTIPLE -->
+    <script id="template" type="text/x-handlebars-template">
+        <div class="box">
+            <!-- IMMAGINE -->
+            <img src="{{imgsrc}}" class="immagine" alt="{{title}}">
+
+            <div class="darkBox">
+                <!-- TITOLO -->
+                <h2 class="h2">{{mainTitle}}</h2>
+                <!-- VOTOT STELLE -->
+                <div class="stars">
+                    <p class="myP">VOTE :&nbsp;&nbsp;</p>
+                    {{{mainVote}}}
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <!-- TEMPLATE MAIN -->
+    <script id="templateMain" type="text/x-handlebars-template">
+        <div class="mainContent">
+            <!-- TITOLO -->
+            <h1 class="h1">{{mainTitle}}</h1>
+            <!-- VOTO STELLE -->
+            <div class="stars">
+                <p class="myP">VOTE :&nbsp;&nbsp;</p>
+                {{mainVote}}
+            </div>
+            <!-- DESCRIZIONE -->
+            <p class="myP">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi eum blanditiis modi placeat libero nulla dolore totam natus voluptatibus culpa.</p>
+            <button class="btn myBtn">Guarda film</button>
+
+        </div>
+    </script>
+
+    <!-- TEMPLATE IMMAGINE -->
+    <script id="imgBg" type="text/x-handlebars-template">
+        .bg{
+            background: linear-gradient(
+            rgba(50, 50, 50, 0.80), 
+            rgba(50, 50, 50, 0.50)
+            ), url({{{mainimgsrc}}});
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    </script>
+
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
